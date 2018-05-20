@@ -2,10 +2,12 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, Http404
 from .models import Article
 from datetime import datetime
-
+from django.urls import reverse
 from django.contrib.syndication.views import Feed
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+import re
 # Create your views here.
+
 
 class RSSFeed(Feed):
     title = "RSS feed - article"
@@ -36,6 +38,7 @@ def home(request):
         post_list = paginator.page(1)
     except EmptyPage :
         post_list = paginator.paginator(paginator.num_pages)
+    is_in_detail = 0 #当前页面不在detail
     return render(request, 'home.html', {'post_list' : post_list})
 
 

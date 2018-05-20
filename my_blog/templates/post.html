@@ -4,10 +4,11 @@
 
 {% block content %}
 <div class="posts">
+        <h1>{{page}}</h1>
         <section class="post">
             <header class="post-header">
+                <h3><a href="/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;返回 >>&nbsp;&nbsp;&nbsp;&nbsp; </a></h3>
                 <h2 class="post-title">{{ post.title }}</h2>
-
                     <p class="post-meta">
                         Time:  <a class="post-author" href="#">{{ post.date_time|date:"Y /m /d"}}</a> <a class="post-category post-category-js" href="{% url "search_tag" tag=post.category %}">{{ post.category }}</a>
                     </p>
