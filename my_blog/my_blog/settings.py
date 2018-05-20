@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'article',
     'article.templatetags.custom_markdown',
+    'tinymce',
 ]
 
 MIDDLEWARE = [
@@ -124,6 +125,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
+STATICFILES_DIRS=[
+    os.path.join(BASE_DIR,'static'),
+]
 STATIC_ROOT='/var/www/my_blog/static/'
-STATIC_URL='/static/'
+
+
+
+
+TINYMCE_DEFAULT_CONFIG = {
+    'theme': 'advanced',
+    'width': 1000,
+    'height': 500,
+}
