@@ -1,6 +1,6 @@
 # My_Blog
 ---
-### Django框架
+### 使用Django框架
 搭建个人简易博客
 
 **搭建nginx + uwsgi可参考：
